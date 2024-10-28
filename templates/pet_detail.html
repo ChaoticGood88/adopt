@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ pet.name }} - Edit Pet</title>
+</head>
+
+<body>
+    <h1>Edit {{ pet.name }}</h1>
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <p>
+            {{ form.photo_url.label }}<br>
+            {{ form.photo_url(size=40) }}
+            {% if form.photo_url.errors %}
+            <span style="color: red;">{{ form.photo_url.errors[0] }}</span>
+            {% endif %}
+        </p>
+
+        <p>
+            {{ form.notes.label }}<br>
+            {{ form.notes(cols=40, rows=5) }}
+            {% if form.notes.errors %}
+            <span style="color: red;">{{ form.notes.errors[0] }}</span>
+            {% endif %}
+        </p>
+
+        <p>
+            {{ form.available.label }}<br>
+            {{ form.available() }}
+        </p>
+
+        <p>{{ form.submit() }}</p>
+    </form>
+
+    <a href="/">Back to Homepage</a>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption Agency</title>
+</head>
+
+<body>
+    <h1>Available Pets for Adoption</h1>
+
+    {% if pets %}
+    <ul>
+        {% for pet in pets %}
+        <li>
+            <a href="/{{ pet.id }}">{{ pet.name }}</a>
+            {% if pet.available %}
+            <span>(Available)</span>
+            {% else %}
+            <span>(Adopted)</span>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No pets available for adoption right now.</p>
+    {% endif %}
+
+    <a href="/add">Add a New Pet</a>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <ul>
+        {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+</body>
+
+</html>

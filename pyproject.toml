@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "adopt"
+version = "0.1.0"
+description = ""
+authors = ["AJ <skyhighzed@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+blinker= "1.8.2"
+click= "8.1.7"
+Flask= "3.0.3"
+Flask-DebugToolbar= "0.16.0"
+greenlet= "3.1.1"
+itsdangerous= "2.2.0"
+Jinja2= "3.1.4"
+MarkupSafe= "3.0.2"
+SQLAlchemy= "2.0.36"
+typing_extensions= "4.12.2"
+Werkzeug= "3.0.6"
+WTForms= "3.2.1"
+flask-sqlalchemy = "^3.1.1"
+psycopg-binary = "^3.2.3"
+psycopg2-binary = "^2.9.10"
+flask-wtf = "^1.2.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
